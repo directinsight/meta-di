@@ -1,6 +1,6 @@
 ## Yocto Layer for the Karo BSP (Rocko) to enable the etnaviv driver with Qt5 ## 
 
-This layer will allow you to build Yocto Rocko for TX6 with Qt5 support using the open source etnaviv driver.
+This layer will allow you to build the Karo Yocto Rocko BSP for TX6 with Qt5 support using the open source etnaviv driver.
 
 Follow the **Yocto Rocko Guide** on the Karo WEB site:
 https://www.karo-electronics.de/1920.html?&L=1
@@ -10,7 +10,7 @@ https://www.karo-electronics.de/1921.html?&L=1
 
 Before running *bitbake* follow these additional instructions:
 
-Add this layer (**meta-di**) to the sources directory of the Karo BSP (Yocto Rocko). There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.
+Add this layer (**meta-di**) to the sources directory of the Karo BSP. There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.
 
 The recipe **recipes-graphics/mesa/mesa_17.1.7.bbappend** enables gallium and etnaviv in mesa. The recepie **recipes-qt5/qt5/qtbase_%.bbappend** enables Qt5 mesa support with the the neccessary Qt5 options for the TX6 range of modules. Now Qt5 builds its eglfs-platform with the gdm module which is needed for the mesa-etnaviv open source GPU driver.
 
@@ -18,7 +18,7 @@ For the file **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend**, check if 17
 To check the mesa-version search for the mesa-recipe in *poky/meta/recipes-graphics/mesa/mesa_[...].bb*. If it
 is a different version change the name for **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend** accordingly.
 
-### Update the Build Configuration Files ### 
+### Update the Build Configuration Files ###   
 
 Add the following to your local.conf:
 ```
@@ -32,13 +32,13 @@ Add the following to your bblayers.conf:
   ${BSPDIR}/sources/meta-di \
 ```
 
-### Build The Image ### 
+### Build The Image ###   
 
 ```
 bitbake core-image-minimal
 ```
 
-### Programming the TX6 Module and Checking ### 
+### Programming the TX6 Module and Check ###   
 
 When programming module with the manufacturing tool create an environment file with the following content:
 
