@@ -1,4 +1,4 @@
-### Yocto Layer for the Karo BSP (Rocko) to enable the etnaviv driver with Qt5 ### 
+## Yocto Layer for the Karo BSP (Rocko) to enable the etnaviv driver with Qt5 ## 
 
 This layer will allow you to build Yocto Rocko for TX6 with Qt5 support using the open source etnaviv driver.
 
