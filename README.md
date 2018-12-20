@@ -10,24 +10,26 @@ https://www.karo-electronics.de/1921.html?&L=1
 
 Before running *bitbake* follow these additional instructions:
 
-Add this layer (**meta-di**) to the sources directory of the Karo BSP. There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.
+Add this layer (**meta-di**) to the sources directory of the Karo BSP. There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.  
 
-The recipe **recipes-graphics/mesa/mesa_17.1.7.bbappend** enables gallium and etnaviv in mesa. The recepie **recipes-qt5/qt5/qtbase_%.bbappend** enables Qt5 mesa support with the the neccessary Qt5 options for the TX6 range of modules. Now Qt5 builds its eglfs-platform with the gdm module which is needed for the mesa-etnaviv open source GPU driver.
+The recipe **recipes-graphics/mesa/mesa_17.1.7.bbappend** enables gallium and etnaviv in mesa. The recepie **recipes-qt5/qt5/qtbase_%.bbappend** enables Qt5 mesa support with the the neccessary Qt5 options for the TX6 range of modules.  
 
-For the file **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend**, check if 17.1.7 is the correct version of mesa.
+Now Qt5 builds its eglfs-platform with the gdm module which is needed for the mesa-etnaviv open source GPU driver.  
+
+For the file **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend**, check if 17.1.7 is the correct version of mesa.  
 To check the mesa-version search for the mesa-recipe in *poky/meta/recipes-graphics/mesa/mesa_[...].bb*. If it
-is a different version change the name for **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend** accordingly.
+is a different version change the name for **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend** accordingly.  
 
 ### Update the Build Configuration Files ###   
 
-Add the following to your local.conf:
+Add the following to your **local.conf**:
 ```
 IMAGE_INSTALL_append = " \
     qtbase-plugins \
     cinematicexperience \
     "
 ```
-Add the following to your bblayers.conf:
+Add the following to your **bblayers.conf**:
 ```
   ${BSPDIR}/sources/meta-di \
 ```
