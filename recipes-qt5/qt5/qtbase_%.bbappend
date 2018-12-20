@@ -1,0 +1,14 @@
+# mx6q = TX6Q/TX6QP, this is the important part!
+PACKAGECONFIG_GL_mx6q = "gbm gles2 kms"  
+# mx6dl = TX6DL/TX6S
+PACKAGECONFIG_GL_mx6dl = "gbm gles2 kms"
+PACKAGECONFIG_GL_mx6sx = "gles2"
+PACKAGECONFIG_GL_mx6sl = "${@base_contains('DISTRO_FEATURES', 'x11', ' gl', ' ', d)}"
+PACKAGECONFIG_GL_mx6ul = "${@base_contains('DISTRO_FEATURES', 'x11', ' gl', ' ', d)}"
+PACKAGECONFIG_GL_mx7 = "gles2"
+QT_CONFIG_FLAGS_append_mx6q = "${@base_contains('DISTRO_FEATURES', 'x11', ' -no-eglfs', ' -eglfs', d)}"
+QT_CONFIG_FLAGS_append_mx6dl = "${@base_contains('DISTRO_FEATURES', 'x11', ' -no-eglfs', ' -eglfs', d)}"
+QT_CONFIG_FLAGS_append_mx6sx = "${@base_contains('DISTRO_FEATURES', 'x11', ' -no-eglfs', ' -eglfs', d)}"
+QT_CONFIG_FLAGS_append_mx6sl = "${@base_contains('DISTRO_FEATURES', 'x11', ' -no-eglfs',  ' -no-opengl -linuxfb -no-eglfs -opengl es2 -no-xcb', d)}"
+QT_CONFIG_FLAGS_append_mx6ul = "${@base_contains('DISTRO_FEATURES', 'x11', ' -no-eglfs',  ' -no-opengl -no-eglfs -linuxfb', d)}"
+QT_CONFIG_FLAGS_append_mx7 = "${@base_contains('DISTRO_FEATURES', 'x11', ' -no-eglfs', ' -no-eglfs -linuxfb', d)}"
