@@ -3,10 +3,10 @@
 This layer will allow you to build the Karo Yocto Rocko BSP for TX6 with Qt5 support using the open source etnaviv driver.
 
 Follow the **Yocto Rocko Guide** on the Karo WEB site:
-https://www.karo-electronics.de/1920.html?&L=1
+https://karo-electronics.github.io/docs/yocto-rocko-guide/index.html
 
-Follow the **Custonise Guide** to add Qt5 support:
-https://www.karo-electronics.de/1921.html?&L=1
+Follow the **Adding Layers to Yocto** section to add Qt5 support:
+https://karo-electronics.github.io/docs/yocto-rocko-guide/Addinglayers.html
 
 Before running *bitbake* follow these additional instructions:
 
