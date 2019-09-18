@@ -16,4 +16,6 @@ BBLAYERS = " \
   ${BSPDIR}/sources/meta-qt5 \
   \
   ${BSPDIR}/sources/meta-karo \
+  \
+  ${BSPDIR}/sources/meta-di \
 "
