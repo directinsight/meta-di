@@ -12,7 +12,9 @@ Before running *bitbake* follow these additional instructions:
 
 Add this layer (**meta-di**) to the sources directory of the Karo BSP:
 
+...
 git clone https://github.com/directinsight/meta-di.git
+...
 
 There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.  
 
