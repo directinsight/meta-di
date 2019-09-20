@@ -10,7 +10,11 @@ https://karo-electronics.github.io/docs/yocto-rocko-guide/Addinglayers.html
 
 Before running *bitbake* follow these additional instructions:
 
-Add this layer (**meta-di**) to the sources directory of the Karo BSP. There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.  
+Add this layer (**meta-di**) to the sources directory of the Karo BSP:
+
+git clone https://github.com/directinsight/meta-di.git
+
+There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.  
 
 The recipe **recipes-graphics/mesa/mesa_17.1.7.bbappend** enables gallium and etnaviv in mesa. The recepie **recipes-qt5/qt5/qtbase_%.bbappend** enables Qt5 mesa support with the the neccessary Qt5 options for the TX6 range of modules.  
 
