@@ -21,7 +21,6 @@ PACKAGECONFIG_append_pn-nativesdk-qemu = " sdl"
 CONF_VERSION = "1"
 EXTRA_IMAGE_FEATURES += "read-only-rootfs"
 IMAGE_INSTALL_append = " \
-    qtbase-fonts \
     qtbase-plugins \
     cinematicexperience \
     "
