@@ -60,8 +60,7 @@ Add the following to your **bblayers.conf**:
 
 ### Build The Image ###   
 
-
-Now build the image, for example:
+From the build root directory now build the image, for example:
 
 ```
 bitbake core-image-minimal
