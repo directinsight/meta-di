@@ -53,7 +53,9 @@ DISTRO_FEATURES_remove = " x11"
 ```
 Add the following to your **bblayers.conf**:
 ```
+  ${BSPDIR}/sources/meta-qt5 \
   ${BSPDIR}/sources/meta-di \
+  
 ```
 
 ### Build The Image ###   
