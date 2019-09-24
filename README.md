@@ -34,9 +34,16 @@ For the file **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend**, check if 17
 To check the mesa-version search for the mesa-recipe in *poky/meta/recipes-graphics/mesa/mesa_[...].bb*. If it
 is a different version change the name for **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend** accordingly.  
 
-### Update the Build Configuration Files ###   
+### Setup the Build and update the Configuration Files ###   
 
-Add the following to your **local.conf**:
+From the BSP root directory configure the build:
+
+```
+MACHINE=imx6dl-tx6-emmc source ./setup-environment build-gnulinux
+```
+Replace the above MACHINE with the required machine coresponding to your TX module. See the Karo Yocto Rocko guide.
+
+In the conf dorectory, add the following to your **local.conf**:
 ```
 IMAGE_INSTALL_append = " \
     qtbase-plugins \
@@ -50,12 +57,6 @@ Add the following to your **bblayers.conf**:
 
 ### Build The Image ###   
 
-From the BSP root directory configure the build:
-
-```
-MACHINE=imx6dl-tx6-emmc source ./setup-environment build-gnulinux
-```
-Replace the above MACHINE with the required machine coresponding to your TX module. See the Karo Yocto Rocko guide.
 
 Now build the image, for example:
 
