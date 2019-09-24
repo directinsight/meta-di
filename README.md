@@ -54,6 +54,12 @@ From the BSP root directory configure the build:
 
 ```
 MACHINE=imx6dl-tx6-emmc source ./setup-environment build-gnulinux
+```
+Replace the above MACHINE with the required machine coresponding to your TX module. See the Karo Yocto Rocko guide.
+
+Now build the image, for example:
+
+```
 bitbake core-image-minimal
 ```
 
