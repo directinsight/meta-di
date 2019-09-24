@@ -5,12 +5,21 @@ This layer will allow you to build the Karo Yocto Rocko BSP for TX6 with Qt5 sup
 Follow the **Yocto Rocko Guide** on the Karo WEB site:
 https://karo-electronics.github.io/docs/yocto-rocko-guide/index.html
 
+In summary run the following commands after setting up the Yocto build environment:
+
+```
+repo init --no-clone-bundle -u https://github.com/karo-electronics/karo-bsp -b rocko
+repo sync
+```
+
 Follow the **Adding Layers to Yocto** section to add Qt5 support:
 https://karo-electronics.github.io/docs/yocto-rocko-guide/Addinglayers.html
 
-Before running *bitbake* follow these additional instructions:
-
-Add this layer (**meta-di**) to the sources directory of the Karo BSP:
+```
+cd sources
+git clone -b rocko https://github.com/meta-qt5/meta-qt5.git
+```
+Now to add the open source etnaviv GPU driver, add this layer (**meta-di**) to the sources directory of the Karo BSP:
 ```
 git clone https://github.com/directinsight/meta-di.git
 ```
@@ -41,7 +50,10 @@ Add the following to your **bblayers.conf**:
 
 ### Build The Image ###   
 
+From the BSP root directory configure the build:
+
 ```
+MACHINE=imx6dl-tx6-emmc source ./setup-environment build-gnulinux
 bitbake core-image-minimal
 ```
 
