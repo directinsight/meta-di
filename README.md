@@ -49,6 +49,7 @@ IMAGE_INSTALL_append = " \
     qtbase-plugins \
     cinematicexperience \
     "
+DISTRO_FEATURES_remove = " x11"
 ```
 Add the following to your **bblayers.conf**:
 ```
