@@ -25,3 +25,4 @@ IMAGE_INSTALL_append = " \
     cinematicexperience \
     "
 DISTRO_FEATURES_remove = "wayland x11"
+DISTRO_FEATURES_append = "linuxfb"
