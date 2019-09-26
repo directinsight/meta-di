@@ -24,5 +24,5 @@ IMAGE_INSTALL_append = " \
     qtbase-plugins \
     cinematicexperience \
     "
-DISTRO_FEATURES_remove = "wayland x11"
-DISTRO_FEATURES_append = "linuxfb"
+DISTRO_FEATURES_remove = "x11"
+
