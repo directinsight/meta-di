@@ -1,10 +1,9 @@
-MACHINE ??= 'imx6dl-tx6-nand'
+MACHINE ??= 'tx6s-8035'
 DL_DIR ?= "${BSPDIR}/downloads"
 SSTATE_DIR ?= "${BSPDIR}/sstate-cache"
-DISTRO ?= 'karo-minimal'
+DISTRO ?= 'karo-x11'
 PACKAGE_CLASSES ?= "package_deb"
 EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
-VIRTUAL-RUNTIME_init_manager = "sysvinit"
 USER_CLASSES ?= "buildstats image-mklibs image-prelink"
 PATCHRESOLVE = "noop"
 BB_DISKMON_DIRS ??= "\
@@ -16,9 +15,13 @@ BB_DISKMON_DIRS ??= "\
     ABORT,${DL_DIR},100M,1K \
     ABORT,${SSTATE_DIR},100M,1K \
     ABORT,/tmp,10M,1K"
+SSTATE_MIRRORS ?= "\
+	file://.* http://sstate.yoctoproject.org/PATH;downloadfilename=PATH \
+"
 PACKAGECONFIG_append_pn-qemu-native = " sdl"
 PACKAGECONFIG_append_pn-nativesdk-qemu = " sdl"
 CONF_VERSION = "1"
+ROOT_HOME = "/root"
 EXTRA_IMAGE_FEATURES += "read-only-rootfs"
 IMAGE_INSTALL_append = " \
     qtbase-plugins \
