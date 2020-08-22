@@ -21,7 +21,7 @@ git clone -b rocko https://github.com/meta-qt5/meta-qt5.git
 ```
 Now to add the open source etnaviv GPU driver, add this layer (**meta-di**) to the sources directory of the Karo BSP:
 ```
-git clone https://github.com/directinsight/meta-di.git
+git clone https://github.com/directinsight/meta-di.git -b rocko
 ```
 
 There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.  
