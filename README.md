@@ -2,8 +2,8 @@
 
 This layer will allow you to build the Karo Yocto Rocko BSP for TX6 with Qt5 support using the open source etnaviv driver.
 
-Follow the **Yocto Rocko Guide** on the Karo WEB site:
-https://karo-electronics.github.io/docs/yocto-rocko-guide/index.html
+Follow the **Yocto Rocko Guide** on the Karo WEB site:  
+https://karo-electronics.github.io/docs/yocto-guide/yocto-rocko-guide/
 
 In summary run the following commands after setting up the Yocto build environment:
 
@@ -12,14 +12,13 @@ repo init --no-clone-bundle -u https://github.com/karo-electronics/karo-bsp -b r
 repo sync
 ```
 
-Follow the **Adding Layers to Yocto** section to add Qt5 support:
-https://karo-electronics.github.io/docs/yocto-rocko-guide/Addinglayers.html
+Add meta-qt5 layer to the sources directory:  
 
 ```
 cd sources
 git clone -b rocko https://github.com/meta-qt5/meta-qt5.git
 ```
-Now to add the open source etnaviv GPU driver, add this layer (**meta-di**) to the sources directory of the Karo BSP:
+Now enable the open source etnaviv GPU driver by adding this layer (**meta-di**) to the sources directory:
 ```
 git clone https://github.com/directinsight/meta-di.git -b rocko
 ```
@@ -28,7 +27,7 @@ There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **
 
 The recipe **recipes-graphics/mesa/mesa_17.1.7.bbappend** enables gallium and etnaviv in mesa. The recepie **recipes-qt5/qt5/qtbase_%.bbappend** enables Qt5 mesa support with the the neccessary Qt5 options for the TX6 range of modules.  
 
-Now Qt5 builds its eglfs-platform with the gdm module which is needed for the mesa-etnaviv open source GPU driver.  
+Now Qt5 builds its eglfs-platform with the gdm module which is required for the mesa-etnaviv open source GPU driver.  
 
 For the file **meta-di/recipes-graphics/mesa/mesa_17.1.7.bbappend**, check if 17.1.7 is the correct version of mesa.  
 To check the mesa-version search for the mesa-recipe in *poky/meta/recipes-graphics/mesa/mesa_[...].bb*. If it
@@ -60,10 +59,10 @@ Add the following to your **bblayers.conf**:
 
 ### Build The Image ###   
 
-From the build root directory now build the image, for example:
+Now from the build root directory build the image, for example:
 
 ```
-bitbake core-image-minimal
+bitbake karo-image-minimal
 ```
 
 ### Programming the TX6 Module and Check ###   
@@ -82,6 +81,6 @@ Qt5_CinematicExperience -platform eglfs -plugin evdevtouch:/dev/input/event0
 ```
 
 ### References ### 
-https://mesa3d.org/intro.html  
+https://mesa3d.org 
 https://github.com/mesa3d
 
