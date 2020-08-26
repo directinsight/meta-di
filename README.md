@@ -1,6 +1,6 @@
 ## Yocto Layer for the Karo BSP (Zeus) to enable the etnaviv driver with Qt5 ## 
 
-**Zeus does not currently work, please use the Rocko branch**  
+**The Zeus BSP does not currently work, please use the Rocko branch**  
 
 This layer will allow you to build the Karo Yocto Rocko BSP for TX6 with Qt5 support using the open source etnaviv driver.
 
@@ -78,6 +78,6 @@ Qt5_CinematicExperience -platform eglfs -plugin evdevtouch:/dev/input/event0
 ```
 
 ### References ### 
-https://mesa3d.org/intro.html  
+https://www.mesa3d.org/  
 https://github.com/mesa3d
 
