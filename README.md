@@ -20,7 +20,7 @@ git clone -b rocko https://github.com/meta-qt5/meta-qt5.git
 ```
 Now enable the open source etnaviv GPU driver by also adding this layer (**meta-di**) to the sources directory:
 ```
-git clone https://github.com/directinsight/meta-di.git -b rocko
+git clone -b rocko https://github.com/directinsight/meta-di.git 
 ```
 
 There are two additional recipes in this layer:- **mesa_17.1.7.bbappend** and **qtbase_%.bbappend**.  
@@ -38,6 +38,7 @@ is a different version change the name for **meta-di/recipes-graphics/mesa/mesa_
 From the BSP root directory configure the build:
 
 ```
+cd ..
 MACHINE=imx6dl-tx6-emmc source ./setup-environment build-gnulinux
 ```
 Replace the above MACHINE with the required machine coresponding to your TX module. See the Karo Yocto Rocko guide.
