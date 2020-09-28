@@ -1,6 +1,6 @@
 ## Yocto Layer for the Karo BSP (Zeus) to enable the etnaviv driver with Qt5 ## 
 
-**The Zeus BSP does not currently work, please use the Rocko branch**  
+**The Zeus branch of this layer does not currently work, please use the Rocko branch**  
 
 This layer will allow you to build the Karo Yocto Rocko BSP for TX6 with Qt5 support using the open source etnaviv driver.
 
